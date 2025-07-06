@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Boarding Type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Predict Boarding Type</h2>
+        <form method="POST">
+            <table>
+                <tr>
+                    <td>Bus Route:</td>
+                    <td><input type="text" name="bus_route" required></td>
+                </tr>
+                <tr>
+                    <td>Station ID:</td>
+                    <td><input type="text" name="station_id" required></td>
+                </tr>
+                <tr>
+                    <td>Weather Condition:</td>
+                    <td><input type="text" name="weather_condition" required></td>
+                </tr>
+                <tr>
+                    <td>Day of the Week:</td>
+                    <td>
+                        <select name="day_of_week" required>
+                            <option value="0">Monday</option>
+                            <option value="1">Tuesday</option>
+                            <option value="2">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="4">Friday</option>
+                            <option value="5">Saturday</option>
+                            <option value="6">Sunday</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Card Type:</td>
+                    <td><input type="text" name="card_type" required></td>
+                </tr>
+                <tr>
+                    <td>Hourly Boarding Count:</td>
+                    <td><input type="number" name="hourly_boarding_count" required></td>
+                </tr>
+                <tr>
+                    <td>Holiday Flag:</td>
+                    <td><input type="number" name="holiday_flag" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Predict">
+        </form>
+        
+    </div>
+</body>
+</html>
